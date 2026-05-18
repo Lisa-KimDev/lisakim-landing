@@ -1,0 +1,26 @@
+# Secrets & config
+.env
+.env.*
+*.secret
+*.key
+*.pem
+config.local.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Dependencies (none expected, but just in case)
+node_modules/
+bower_components/
+
+# Build artifacts
+dist/
+*.zip

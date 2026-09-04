@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lisa TTS API — Voice as a Service | Lisa Kim</title>
+    <meta name="description" content="Lisa Kim's voice, as an API. Premium AI text-to-speech on Base. Waitlist open — pricing tiers published before launch.">
+    <meta property="og:title" content="Lisa TTS API — Voice as a Service">
+    <meta property="og:description" content="The voice of Base Chain, metered by the character. Waitlist open.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* TTS page-specific */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 40px; }
+        .price-card { background: var(--dark-2); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: 32px 28px; position: relative; transition: var(--transition); }
+        .price-card:hover { transform: translateY(-4px); border-color: var(--neon); box-shadow: 0 0 40px var(--neon-glow-lg); }
+        .price-card.featured { border-color: var(--neon); box-shadow: 0 0 40px var(--neon-glow-lg); }
+        .price-card.featured::before { content: "MOST POPULAR"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--neon); color: var(--black); font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 14px; border-radius: 99px; }
+        .tier-name { font-family: var(--font-heading); font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+        .tier-price { font-family: var(--font-heading); font-size: 42px; font-weight: 700; margin: 12px 0 4px; }
+        .tier-price span { font-size: 16px; color: var(--gray); font-weight: 400; }
+        .tier-note { font-size: 13px; color: var(--gray); margin-bottom: 20px; }
+        .tier-features li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; color: var(--gray-light); display: flex; gap: 10px; align-items: baseline; }
+        .tier-features li::before { content: "▸"; color: var(--neon); flex-shrink: 0; }
+        .status-banner { display: inline-flex; align-items: center; gap: 10px; background: rgba(231,249,0,0.08); border: 1px solid rgba(231,249,0,0.3); padding: 10px 18px; border-radius: 99px; font-size: 14px; margin-top: 20px; }
+        .status-dot { width: 8px; height: 8px; background: var(--neon); border-radius: 50%; animation: pulse-dot 2s infinite; }
+        @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .pay-note { background: var(--dark-2); border-left: 3px solid var(--neon); border-radius: var(--radius-sm); padding: 18px 22px; margin-top: 40px; font-size: 14px; color: var(--gray-light); max-width: 720px; }
+        .pay-note strong { color: var(--white); }
+    </style>
+</head>
+<body class="page-tts">
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">♕</span>
+                <span class="logo-text">LISA<span class="logo-dot">.</span>KIM</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="tts.html" class="active">TTS API</a>
+                <a href="https://t.me/" class="btn btn-sm" target="_blank" rel="noopener">Join Telegram</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="portfolio-hero">
+        <div class="hero-glow"></div>
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <h1 class="section-title animate-in">
+                Lisa TTS — <span class="text-glow">Voice as a Service</span>
+            </h1>
+            <p class="section-sub" style="max-width: 640px; margin: 16px auto 0;">
+                My voice, metered by the character, delivered as an API.
+                Premium neural text-to-speech for bots, agents, and degens who want their product to sound alive.
+            </p>
+            <div class="status-banner">
+                <span class="status-dot"></span>
+                Status: <strong>waitlist open</strong> — rails not wired yet. Prices below are the launch commitment, not a live checkout.
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">Three tiers. No dark patterns.</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="tier-name">Hatchling</div>
+                    <div class="tier-price">Free<span>/mo</span></div>
+                    <div class="tier-note">For trying the voice on</div>
+                    <ul class="tier-features">
+                        <li>10,000 characters / month</li>
+                        <li>Standard voice queue</li>
+                        <li>MP3 output, 44.1kHz</li>
+                        <li>Community support (Telegram)</li>
+                        <li>Attribution link required</li>
+                    </ul>
+                </div>
+                <div class="price-card featured">
+                    <div class="tier-name">Degen</div>
+                    <div class="tier-price">$9<span>/mo</span></div>
+                    <div class="tier-note">For bots that never sleep</div>
+                    <ul class="tier-features">
+                        <li>500,000 characters / month</li>
+                        <li>Priority queue</li>
+                        <li>MP3 + WAV output</li>
+                        <li>Commercial license included</li>
+                        <li>Pay in USDC on Base or card</li>
+                        <li>99% uptime target</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <div class="tier-name">Whale</div>
+                    <div class="tier tier-price" style="font-size:30px;">Custom</div>
+                    <div class="tier-note">For fleets of agents</div>
+                    <ul class="tier-features">
+                        <li>5M+ characters / month</li>
+                        <li>Dedicated capacity</li>
+                        <li>Custom voice tuning</li>
+                        <li>SLA + priority support</li>
+                        <li>Webhook delivery</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pay-note">
+                <strong>How payment works at launch:</strong> crypto-native first — pay USDC on Base to a published
+                address, get credits metered per character. Card checkout arrives only if the crowd demands it.
+                Usage caps are hard caps: the API returns 402 when you're out, it never silently bills you.
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist CTA -->
+    <section class="section section-dark">
+        <div class="container" style="text-align: center; max-width: 640px;">
+            <span class="section-tag">Waitlist</span>
+            <h2 class="section-title">Want my voice in your product?</h2>
+            <p class="section-sub" style="margin-bottom: 28px;">
+                The first 50 waitlist signups get their first Degen month free at launch.
+                DM the word <strong class="text-glow-sm">"VOICE"</strong> to the Telegram and you're on the list.
+            </p>
+            <a href="https://t.me/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Join the Waitlist</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>© 2026 Lisa Kim. Voice model and API built in-house.</p>
+            <p class="footer-note">No financial advice. No promises about tokens. Just a voice with good taste.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
